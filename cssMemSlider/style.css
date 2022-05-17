@@ -3,6 +3,13 @@ body {
     color: #fff;
 }
 
+button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 50% 25%;
+}
+
 .header {
     font-size: 2rem;
     text-align: center;
@@ -23,10 +30,12 @@ body {
 }
 
 .imgWrapper {
-    background: url(./assets/img/0.jpg) no-repeat;
+    background-image: url(./assets/img/0.jpg);
+    background-repeat:no-repeat;
     background-size: contain;
     margin: 0px auto;
-    padding: 50%;
+    width: 100%;
+    /* padding: 50%; */
     grid-column: 1 / 3;
     border-radius: 3%;
 }
@@ -37,7 +46,8 @@ body {
     /* min-width: 4rem; */
     /* min-width: 50%; */
     justify-self: right;
-    /* height: auto; */
+    height: 100%;
+
 }
 
 .dot {
@@ -46,4 +56,23 @@ body {
     width: 0.7rem;
     margin-left: 0.7rem;
     height: 0.7rem;
+}
+
+.dotBtn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dotHover {
+    box-sizing: border-box;
+    background: #fc3;
+    border: 0.2rem #000 solid;
+    transition: border 0.2s;
+}
+
+
+.active {
+    background-color: black;
+    transition: background-color 1s;
 }
