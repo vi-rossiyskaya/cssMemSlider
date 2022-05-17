@@ -88,6 +88,12 @@ controlsWrapper.addEventListener('click', (e) => {
     text.querySelector('.current').classList.remove('current')
     text.querySelector('[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('current')
 
+    imgWrapper.style.background = 'url(./assets/img/' + e.target.dataset.id + '.jpg) no-repeat'
+    imgWrapper.style.backgroundSize = 'contain'
+    console.log(imgWrapper)
+    console.log(imgWrapper.style)
+    console.log(imgWrapper.style.background)
     controlsWrapper.querySelector('.active').classList.remove('active')
     controlsWrapper.querySelector('.dot[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('active')
+    
 })
