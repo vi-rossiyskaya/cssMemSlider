@@ -12,7 +12,7 @@ let data = [
     {'imgUrl': 'url(./assets/img/0.jpg)',
     'text': 'В тренажерном зале'},
     {'imgUrl': 'url(./assets/img/1.jpg)',
-    'text': 'Мы ищем кого-то более...реалистичного'},
+    'text': 'Мы ищем кого-то более... реалистичного'},
     {'imgUrl': 'url(./assets/img/2.jpg)',
     'text': 'Сейчас узнаешь!'},
     {'imgUrl': 'url(./assets/img/3.jpg)',
