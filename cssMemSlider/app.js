@@ -29,18 +29,34 @@ buttonL.classList.add('buttonL')
 buttonR.classList.add('buttonR')
 
 
+
 for (let i = 0; i < 4; i ++) {
     const dotBtn = document.createElement('div')
     const dot = document.createElement('div')
+    const p = document.createElement('p')
+
     dotBtn.classList.add('dotBtn');
     dot.classList.add('dot');
+    p.classList.add('sign')
+
     dot.dataset.id = i;
     dotBtn.dataset.id = i;
+    p.dataset.id = i;
+    p.classList.add('flip-scale-2-hor-bottom')
+    
+
+    if (i === 0) {
+        p.classList.add('current')
+        dot.classList.add('active')
+    }
+    
+    p.append(`${data[i].text}`)
+    text.append(p)
     dotBtn.append(dot)
     controlsWrapper.append(dotBtn)
 }
 
-text.append(`${data[0].text}`)
+// text.append(`${data[0].text}`)
 header.append('Wawa Wiwa Comics')
 body.append(header)
 body.append(main)
@@ -65,4 +81,13 @@ controlsWrapper.addEventListener('mouseout', (e) => {
 })
 
 
+controlsWrapper.addEventListener('click', (e) => {
 
+    if (e.target.dataset.id === controlsWrapper.querySelector('.active').dataset.id) {return}
+
+    text.querySelector('.current').classList.remove('current')
+    text.querySelector('[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('current')
+
+    controlsWrapper.querySelector('.active').classList.remove('active')
+    controlsWrapper.querySelector('.dot[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('active')
+})

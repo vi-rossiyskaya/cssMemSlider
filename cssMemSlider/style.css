@@ -19,7 +19,7 @@ button {
 .container {
     max-width: 30vw;
     width: 100%;
-    /* height: 90vh; */
+    /* height: 0vh; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -30,14 +30,25 @@ button {
 }
 
 .imgWrapper {
-    background-image: url(./assets/img/0.jpg);
+    background: url(./assets/img/0.jpg) no-repeat;
     background-repeat:no-repeat;
     background-size: contain;
     margin: 0px auto;
     width: 100%;
+    overflow: hidden;
     /* padding: 50%; */
     grid-column: 1 / 3;
     border-radius: 3%;
+}
+
+.text {
+    overflow: hidden;
+    /* height: 100%; */
+}
+
+.sign {
+    /* height: 100%; */
+    display: none;
 }
 
 .controlsWrapper {
@@ -47,7 +58,7 @@ button {
     /* min-width: 50%; */
     justify-self: right;
     height: 100%;
-
+    cursor: pointer;
 }
 
 .dot {
@@ -76,3 +87,55 @@ button {
     background-color: black;
     transition: background-color 1s;
 }
+
+.current {
+    display: block;
+    animation: normal;
+}
+
+.flip-scale-2-hor-bottom {
+	-webkit-animation: flip-scale-2-hor-bottom 0.5s linear both;
+	        animation: flip-scale-2-hor-bottom 0.5s linear both;
+}
+
+@-webkit-keyframes flip-scale-2-hor-bottom {
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+              transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    50% {
+      -webkit-transform: translateY(50%) rotateX(90deg) scale(2);
+              transform: translateY(50%) rotateX(90deg) scale(2);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    0% {
+      -webkit-transform: translateY(100%) rotateX(180deg) scale(1);
+              transform: translateY(100%) rotateX(180deg) scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  @keyframes flip-scale-2-hor-bottom {
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+              transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    50% {
+      -webkit-transform: translateY(50%) rotateX(90deg) scale(2);
+              transform: translateY(50%) rotateX(90deg) scale(2);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    0% {
+      -webkit-transform: translateY(100%) rotateX(180deg) scale(1);
+              transform: translateY(100%) rotateX(180deg) scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  
