@@ -24,9 +24,9 @@ container.classList.add('container');
 main.classList.add('main');
 imgWrapper.classList.add('imgWrapper');
 controlsWrapper.classList.add('controlsWrapper');
-text.classList.add('text')
-buttonL.classList.add('buttonL')
-buttonR.classList.add('buttonR')
+text.classList.add('text');
+buttonL.classList.add('buttonL');
+buttonR.classList.add('buttonR');
 
 
 
@@ -56,7 +56,7 @@ for (let i = 0; i < 4; i ++) {
     controlsWrapper.append(dotBtn)
 }
 
-// text.append(`${data[0].text}`)
+
 header.append('Wawa Wiwa Comics')
 body.append(header)
 body.append(main)
@@ -67,11 +67,7 @@ container.append(imgWrapper)
 container.append(text)
 container.append(controlsWrapper)
 
-controlsWrapper.addEventListener('click', (e) => {
-    console.log(e)
-    console.log(e.target)
-    console.log(e.target.dataset.id)
-})
+
 controlsWrapper.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('active')) {return}
     controlsWrapper.querySelector('.dot[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('dotHover')
@@ -90,9 +86,7 @@ controlsWrapper.addEventListener('click', (e) => {
 
     imgWrapper.style.background = 'url(./assets/img/' + e.target.dataset.id + '.jpg) no-repeat'
     imgWrapper.style.backgroundSize = 'contain'
-    console.log(imgWrapper)
-    console.log(imgWrapper.style)
-    console.log(imgWrapper.style.background)
+
     controlsWrapper.querySelector('.active').classList.remove('active')
     controlsWrapper.querySelector('.dot[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('active')
     
