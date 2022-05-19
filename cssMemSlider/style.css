@@ -25,12 +25,9 @@ fieldset {
 .container {
     max-width: 30vw;
     width: 100%;
-    /* height: 0vh; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr; */
-    /* flex-direction: column; */
     flex-wrap: wrap;
     align-items: center;
 }
@@ -42,30 +39,74 @@ fieldset {
     width: 100%;
     overflow: hidden;
     display: flex;
-    /* padding: 50%; */
     grid-column: 1 / 9;
+    grid-row: 1 / 2;
     border-radius: 3%;
-    transition: background 1s;
+    transition: background-image 1s;
+}
+
+.input-radio {
+    display: none;
+}
+
+.input-radio:checked + .control .dot {
+    background-color: rgb(48, 48, 48);
+}
+.input-radio:checked + .control:hover .dot {
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+#s1:checked ~ .imgWrapper {
+    background-image: url('./assets/img/0.jpg');
+}
+#s2:checked ~ .imgWrapper {
+    background-image: url('./assets/img/1.jpg');
+}
+#s3:checked ~ .imgWrapper {
+    background-image: url('./assets/img/2.jpg');
+}
+#s4:checked ~ .imgWrapper {
+    background-image: url('./assets/img/3.jpg');
+}
+
+#s1:checked ~ .text [data-id='0'] {
+    display: block;
+}
+#s2:checked ~ .text [data-id='1'] {
+    display: block;
+}
+#s3:checked ~ .text [data-id='2'] {
+    display: block;
+}
+#s4:checked ~ .text [data-id='3'] {
+    display: block;
 }
 
 .text {
     overflow: hidden;
     grid-column: 1 / 5;
-    /* height: 100%; */
+    grid-row: 2 / 3;
 }
 
 .sign {
-    /* height: 100%; */
     display: none;
 }
 
 .controlsWrapper {
     display: flex;
     justify-content: space-between;
-    /* min-width: 4rem; */
-    /* min-width: 50%; */
     justify-self: right;
     height: 100%;
+    cursor: pointer;
+}
+
+.control {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -75,6 +116,12 @@ fieldset {
     width: 0.7rem;
     margin-left: 0.7rem;
     height: 0.7rem;
+}
+
+.control:hover .dot {
+    width: 1rem;
+    height: 1rem;
+    transition: 0.3s;
 }
 
 .dotBtn {
@@ -94,11 +141,6 @@ fieldset {
 .active {
     background-color: black;
     transition: background-color 1s;
-}
-
-.current {
-    display: block;
-    animation: normal;
 }
 
 .flip-scale-2-hor-bottom {
