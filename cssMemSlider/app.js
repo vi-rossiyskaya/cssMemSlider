@@ -61,8 +61,8 @@ header.append('Wawa Wiwa Comics')
 body.append(header)
 body.append(main)
 main.append(container)
-imgWrapper.append(buttonR)
 imgWrapper.append(buttonL)
+imgWrapper.append(buttonR)
 container.append(imgWrapper)
 container.append(text)
 container.append(controlsWrapper)
@@ -90,4 +90,16 @@ controlsWrapper.addEventListener('click', (e) => {
     controlsWrapper.querySelector('.active').classList.remove('active')
     controlsWrapper.querySelector('.dot[data-id=' + `\'${e.target.dataset.id}\']`).classList.add('active')
     
+})
+
+buttonR.addEventListener('click', () => {
+    console.log('hello')
+    console.log(text.querySelector('.current'))
+    console.log(text.querySelector('.current').dataset.id)
+    const id = text.querySelector('.current').dataset.id;
+    console.log(id)
+    console.log(text.querySelector('[data-id=' + `\'${id + 1}\']`))
+    text.querySelector('.current').classList.remove('current')
+    text.querySelector('[data-id=' + `\'${id + 1}\']`).classList.add('current')
+    // text.dataset.id =('[data-id=' + `\'${id + 1}\']`).classList.add('current')
 })
