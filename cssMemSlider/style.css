@@ -1,0 +1,210 @@
+body {
+    background-color: #fc3;
+    color: #fff;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 50% 25%;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.header {
+    font-size: 2rem;
+    text-align: center;
+    margin: 10vh auto 2vh;
+}
+
+.container {
+    max-width: 30vw;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.imgWrapper {
+    background-repeat:no-repeat;
+    background-size: contain;
+    margin: 0px auto;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+    border-radius: 3%;
+    transition: background-image 1s;
+}
+
+.input-radio {
+    display: none;
+}
+
+.input-radio:checked + .control .dot {
+    background-color: rgb(48, 48, 48);
+}
+.input-radio:checked + .control:hover .dot {
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+#s1:checked ~ .imgWrapper {
+    background-image: url('./assets/img/0.jpg');
+}
+#s2:checked ~ .imgWrapper {
+    background-image: url('./assets/img/1.jpg');
+}
+#s3:checked ~ .imgWrapper {
+    background-image: url('./assets/img/2.jpg');
+}
+#s4:checked ~ .imgWrapper {
+    background-image: url('./assets/img/3.jpg');
+}
+
+#s1:checked ~ .text [data-id='0'] {
+    display: block;
+}
+#s2:checked ~ .text [data-id='1'] {
+    display: block;
+}
+#s3:checked ~ .text [data-id='2'] {
+    display: block;
+}
+#s4:checked ~ .text [data-id='3'] {
+    display: block;
+}
+
+.text {
+    overflow: hidden;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+}
+
+.sign {
+    display: none;
+}
+
+.control {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dot {
+    background: #fff;
+    border-radius: 50%;
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+.control:hover .dot {
+    width: 1rem;
+    height: 1rem;
+    transition: 0.3s;
+}
+
+.dotBtn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dotHover {
+    box-sizing: border-box;
+    background: #fc3;
+    border: 0.2rem #000 solid;
+    transition: border 0.2s;
+}
+
+
+.active {
+    background-color: black;
+    transition: background-color 1s;
+}
+
+.flip-scale-2-hor-bottom {
+	-webkit-animation: flip-scale-2-hor-bottom 0.5s linear both;
+	        animation: flip-scale-2-hor-bottom 0.5s linear both;
+}
+
+@-webkit-keyframes flip-scale-2-hor-bottom {
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+              transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    50% {
+      -webkit-transform: translateY(50%) rotateX(90deg) scale(2);
+              transform: translateY(50%) rotateX(90deg) scale(2);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    0% {
+      -webkit-transform: translateY(100%) rotateX(180deg) scale(1);
+              transform: translateY(100%) rotateX(180deg) scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  @keyframes flip-scale-2-hor-bottom {
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+              transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    50% {
+      -webkit-transform: translateY(50%) rotateX(90deg) scale(2);
+              transform: translateY(50%) rotateX(90deg) scale(2);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    0% {
+      -webkit-transform: translateY(100%) rotateX(180deg) scale(1);
+              transform: translateY(100%) rotateX(180deg) scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  
+
+  @media (max-width: 670px) {
+
+    .header {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: center;
+    }
+
+    .imgWrapper {
+        grid-column: 1 / 5;
+    }
+
+    .text {
+        text-align: center;
+        grid-column: 1 / 5;
+    }
+
+    .controlsWrapper {
+        justify-self: center;
+    }
+  }
