@@ -85,20 +85,15 @@ fieldset {
 
 .text {
     overflow: hidden;
+    height: 90px;
+    display: flex;
+    align-items: center;
     grid-column: 1 / 5;
     grid-row: 2 / 3;
 }
 
 .sign {
     display: none;
-}
-
-.controlsWrapper {
-    display: flex;
-    justify-content: space-between;
-    justify-self: right;
-    height: 100%;
-    cursor: pointer;
 }
 
 .control {
@@ -114,7 +109,6 @@ fieldset {
     background: #fff;
     border-radius: 50%;
     width: 0.7rem;
-    margin-left: 0.7rem;
     height: 0.7rem;
 }
 
@@ -197,16 +191,17 @@ fieldset {
     }
 
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-content: center;
     }
 
     .imgWrapper {
-        grid-column: auto;
+        grid-column: 1 / 5;
     }
 
     .text {
         text-align: center;
+        grid-column: 1 / 5;
     }
 
     .controlsWrapper {
